@@ -6,6 +6,8 @@ library(reshape2)
 # CREATE PIVOT TABLE #
 ######################
 
+setwd("../../gen/temp")
+
 # import the data from `gen/data-preparation/aggregated_df.csv`
 df <- read.csv("aggregated_df.csv")
 
@@ -13,4 +15,4 @@ df <- read.csv("aggregated_df.csv")
 df_pivot <- df %>% dcast(date ~ neighbourhood, fun.aggregate = sum, value.var = "num_reviews")
 
 # export results
-write.csv(df_pivot, "pivot_table.csv")
+write.csv(df_pivot, file.path('../../gen/temp', "pivot_table.csv"))

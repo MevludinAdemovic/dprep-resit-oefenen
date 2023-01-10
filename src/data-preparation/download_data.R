@@ -1,6 +1,7 @@
 library(dplyr)
 library(reshape2)
 
+setwd("../../data")
 ######################
 ### DOWNLOAD DATA ####
 ######################

@@ -1,7 +1,7 @@
 library(dplyr)
 library(reshape2)
 
-
+setwd("../../data")
 ######################
 #### CLEAN DATA ######
 ######################
@@ -31,4 +31,6 @@ df_grouped <- df_merged %>%
 df_grouped$date <- as.Date(paste0(df_grouped$year, "-", df_grouped$month, "-01"))
 
 # store the final data frame in `gen/data-preparation` as `aggregated_df.csv`
-write.csv(df_grouped, "aggregated_df.csv")
+write.csv(df_grouped, file.path('../gen/temp', "aggregated_df.csv"))
+          
+          

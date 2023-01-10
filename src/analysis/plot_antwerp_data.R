@@ -7,13 +7,15 @@ library(reshape2)
 ### PLOT ANTWERP ####
 ######################
 
+setwd("../../gen/temp")
+
 # import the data from `gen/analysis/pivot_table`
 df_pivot <- read.csv("pivot_table.csv")
 
 # convert the `date` column into date format.
 df_pivot$date <- as.Date(df_pivot$date)
 
-pdf("plot_Antwerp.pdf")
+pdf(file.path('../../gen/output', "plot_Antwerp.pdf"))
 plot(x = df_pivot$date, 
      y = df_pivot$Universiteitsbuurt, 
      col = "red", 
